@@ -15,9 +15,11 @@ public class App {
 
     static void printPostorder(int in[], int pre[]){
         int root = searchInArray(in, pre[0]);
+        /*Printing postorder of left subtree */
         if(root != 0){
             printPostorder(Arrays.copyOfRange(in, 0, root), Arrays.copyOfRange(pre, 1, root+1));
         }
+        /*Printing postorder of right subtree */
         if(root != (in.length-1)){
             printPostorder(Arrays.copyOfRange(in, root+1, in.length), Arrays.copyOfRange(pre, root+1, in.length));
         }
