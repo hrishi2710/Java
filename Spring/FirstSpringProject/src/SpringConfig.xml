@@ -3,17 +3,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="restaurantBean" class="springcore.Restaurant">
-
-		<property name="restaruantWaitersList">
-			<list>
-				<value>Hrishi</value>
-				<value>Abhilash</value>
-				<value>Charlie</value>
-				<value>Gondji</value>
-			</list>
-		</property>
-
+	<bean id="restaurantBean" class="springcore.Restaurant" scope="singleton">
 	</bean>
 
 </beans>
