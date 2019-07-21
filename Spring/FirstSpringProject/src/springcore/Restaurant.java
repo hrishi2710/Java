@@ -1,13 +1,17 @@
 package springcore;
 
+import java.util.List;
+
 public class Restaurant {
-	HotDrink hotDrink;
-	
-	public void setHotDrink(HotDrink hotDrink){
-		this.hotDrink = hotDrink;
+
+	private List restaruantWaitersList;
+
+	public void setRestaruantWaitersList(List restaruantWaitersList) {
+		this.restaruantWaitersList = restaruantWaitersList;
 	}
-	
-	public void prepareHotDrink() {
-		hotDrink.prepareHotDrink();
+
+	public void displayWaitersNames() {
+
+		System.out.println("All waiters working in Restaruant  :  " + restaruantWaitersList);
 	}
 }
