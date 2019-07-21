@@ -3,9 +3,11 @@ package springcore;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 
-public class Restaurant {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Restaurant implements InitializingBean, DisposableBean{
 
 	/*private List restaruantWaitersList;
 
@@ -24,12 +26,15 @@ public class Restaurant {
 	public void greetCustomer() {
 		System.out.println(welcomeNote);
 	}
-	@PostConstruct
-	public void init() {
-		System.out.println("The bean intiated!");
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println("The bean is initialising");
 	}
-	@PreDestroy
-	public void destroy() {
-		System.out.println("Bean will get destroyed");
+	@Override
+	public void destroy() throws Exception {
+		// TODO Auto-generated method stub
+		System.out.println("The bean is going to be destroyed");
 	}
+	
 }
