@@ -2,6 +2,9 @@ package springcore;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class Restaurant {
 
 	/*private List restaruantWaitersList;
@@ -21,11 +24,11 @@ public class Restaurant {
 	public void greetCustomer() {
 		System.out.println(welcomeNote);
 	}
-	
+	@PostConstruct
 	public void init() {
 		System.out.println("The bean intiated!");
 	}
-	
+	@PreDestroy
 	public void destroy() {
 		System.out.println("Bean will get destroyed");
 	}
