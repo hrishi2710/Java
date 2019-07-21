@@ -14,7 +14,6 @@ public class TestSpringProject {
 		((AbstractApplicationContext)context).registerShutdownHook();
 		
 		Restaurant restaurantObj = (Restaurant) context.getBean("restaurantBean");
-		restaurantObj.setWelcomeNote("Object 1 is setting welcome note 1 property");
 		restaurantObj.greetCustomer();
 	}
 }

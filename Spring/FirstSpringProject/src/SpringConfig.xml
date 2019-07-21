@@ -3,10 +3,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="restaurantBean" class="springcore.Restaurant" init-method="init" destroy-method="destroy">
+	<bean id="restaurantBean" class="springcore.Restaurant">
+	<property name="welcomeNote" value="HI! welcome"></property>
 	</bean>
-	<bean class = "springcore.IBeanPostProcessor"></bean>
-	<bean class = "springcore.IIBeanPostProcessor"></bean>
-	
+	<bean class = "springcore.IBeanFactoryPostProcessor"></bean>
 
 </beans>
