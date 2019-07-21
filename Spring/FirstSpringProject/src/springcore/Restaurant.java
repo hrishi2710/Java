@@ -3,7 +3,7 @@ package springcore;
 public class Restaurant {
 	HotDrink hotDrink;
 	
-	Restaurant(HotDrink hotDrink){
+	public void setHotDrink(HotDrink hotDrink){
 		this.hotDrink = hotDrink;
 	}
 	
