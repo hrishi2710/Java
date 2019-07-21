@@ -21,4 +21,12 @@ public class Restaurant {
 	public void greetCustomer() {
 		System.out.println(welcomeNote);
 	}
+	
+	public void init() {
+		System.out.println("The bean intiated!");
+	}
+	
+	public void destroy() {
+		System.out.println("Bean will get destroyed");
+	}
 }

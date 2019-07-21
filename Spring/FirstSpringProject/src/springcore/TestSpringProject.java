@@ -1,6 +1,7 @@
 package springcore;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestSpringProject {
@@ -10,11 +11,10 @@ public class TestSpringProject {
 		ApplicationContext context =
 				new ClassPathXmlApplicationContext("SpringConfig.xml");
 		
-		Restaurant restaurantObj1 = (Restaurant) context.getBean("restaurantBean");
-		restaurantObj1.setWelcomeNote("Object 1 is setting welcome note 1 property");
-		restaurantObj1.greetCustomer();
+		((AbstractApplicationContext)context).registerShutdownHook();
 		
-		Restaurant restaurantObj2 = (Restaurant) context.getBean("restaurantBean");
-		restaurantObj2.greetCustomer();
+		Restaurant restaurantObj = (Restaurant) context.getBean("restaurantBean");
+		restaurantObj.setWelcomeNote("Object 1 is setting welcome note 1 property");
+		restaurantObj.greetCustomer();
 	}
 }
