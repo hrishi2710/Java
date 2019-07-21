@@ -7,7 +7,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-public class Restaurant implements InitializingBean, DisposableBean{
+public class Restaurant{
 
 	/*private List restaruantWaitersList;
 
@@ -26,7 +26,7 @@ public class Restaurant implements InitializingBean, DisposableBean{
 	public void greetCustomer() {
 		System.out.println(welcomeNote);
 	}
-	@Override
+	/*@Override
 	public void afterPropertiesSet() throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("The bean is initialising");
@@ -35,6 +35,14 @@ public class Restaurant implements InitializingBean, DisposableBean{
 	public void destroy() throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("The bean is going to be destroyed");
+	}*/
+	
+	public void init() {
+		System.out.println("The bean is getting initialised");
+	}
+	
+	public void destroy() {
+		System.out.println("The bean is getting to be destroyed");
 	}
 	
 }
