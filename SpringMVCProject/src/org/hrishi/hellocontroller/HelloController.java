@@ -24,9 +24,17 @@ public class HelloController extends AbstractController{
 }*/
 
 @Controller
+@RequestMapping("/greet")
 public class HelloController{
 	@RequestMapping("/welcome")
 	public ModelAndView helloWorld() {
+		ModelAndView model = new ModelAndView("HelloPage");
+		model.addObject("msg", "Hello!");
+		return model;
+		
+	}
+	@RequestMapping("/hi")
+	public ModelAndView hiWorld() {
 		ModelAndView model = new ModelAndView("HelloPage");
 		model.addObject("msg", "Hi!");
 		return model;
