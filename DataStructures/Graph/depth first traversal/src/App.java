@@ -18,7 +18,11 @@ class Graph {
 
     void dfs(int source){
         boolean[] visited = new boolean[vertices];
-        dfsUtil(source, visited);
+        for(int i = 0; i<vertices; i++){
+            if(visited[source] == false){
+                dfsUtil(source, visited);
+            }
+        }
     }
 
     void dfsUtil(int source, boolean[] visited){
