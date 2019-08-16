@@ -1,6 +1,7 @@
 <html>
 	<body>
-		<h1> Student admission form </h1>
+		<h1> ${headerMessage}</h1>
+		<h3> Student admission form: </h3>
 		<form action = "/AdmissionProject/submitAdmissionForm.html" method ="post">
 			<p>
 				Student's name: <input type = "text" name = "studentName"/>
