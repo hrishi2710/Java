@@ -1,5 +1,9 @@
 package org.hrishi.studentadmissioncontroller;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,6 +19,9 @@ public class StudentAdmissionController {
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		binder.setDisallowedFields(new String[] {"studentMobile"});
+		//SimpleDateFormat dateFormat = new SimpleDateFormat("DD/MM/YYYY");
+		//binder.registerCustomEditor(Date.class,"studentDob", new CustomDateEditor(dateFormat, true));
+		binder.registerCustomEditor(String.class, "studentName", new StudentNameEditor());
 	}
 	@RequestMapping(value = "/admissionForm.html", method = RequestMethod.GET)
 	public ModelAndView getAdmissionForm() {
