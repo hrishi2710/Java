@@ -3,6 +3,8 @@ package org.hrishi.studentadmissioncontroller;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,7 +37,7 @@ public class StudentAdmissionController {
 	}
 	
 	@RequestMapping(value = "/submitAdmissionForm.html", method = RequestMethod.POST)
-	public ModelAndView submitAdmissionForm(@ModelAttribute ("student1") Student student1, BindingResult result) {
+	public ModelAndView submitAdmissionForm(@Valid @ModelAttribute ("student1") Student student1, BindingResult result) {
 		
 		if(result.hasErrors()) {
 			ModelAndView model = new ModelAndView("AdmissionForm");

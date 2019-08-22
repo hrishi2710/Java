@@ -4,8 +4,13 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.constraints.Size;
+
+
 public class Student {
 	private String studentName;
+	
+	@Size(min = 2, max= 30)
 	private String studentHobby;
 	private Long studentMobile;
 	private Date studentDob;
