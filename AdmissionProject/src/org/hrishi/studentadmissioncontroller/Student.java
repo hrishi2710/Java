@@ -10,8 +10,17 @@ public class Student {
 	private Long studentMobile;
 	private Date studentDob;
 	private List<String> studentSkills;
+	private Address studentAddress;
 	
 	
+	public Address getStudentAddress() {
+		return studentAddress;
+	}
+
+	public void setStudentAddress(Address studentAddress) {
+		this.studentAddress = studentAddress;
+	}
+
 	public Long getStudentMobile() {
 		return studentMobile;
 	}
