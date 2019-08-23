@@ -13,6 +13,13 @@
  
   <context:component-scan base-package="org.hrishi.studentadmissioncontroller"/>
  <mvc:annotation-driven/>
+ 
+ <mvc:interceptors>
+ <mvc:interceptor>
+ <mvc:mapping path="/admissionForm.html"/>
+ <bean class = "org.hrishi.studentadmissioncontroller.DayOfWeekBasedInterceptor"/>
+ </mvc:interceptor>
+ </mvc:interceptors>
  <bean id="viewResolver"
     	class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
         <property name="prefix">

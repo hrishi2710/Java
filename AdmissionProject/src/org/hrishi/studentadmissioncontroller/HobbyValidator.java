@@ -5,9 +5,10 @@ import javax.validation.ConstraintValidatorContext;
 
 public class HobbyValidator implements ConstraintValidator<IsValidHobby, String> {
 
+	private String listOfValidHobbies;
 	@Override
 	public void initialize(IsValidHobby isValidHobby) {
-		// TODO Auto-generated method stub
+		this.listOfValidHobbies = isValidHobby.listOfValidHobbies();
 		
 	}
 
@@ -15,7 +16,7 @@ public class HobbyValidator implements ConstraintValidator<IsValidHobby, String>
 	public boolean isValid(String studentHobby, ConstraintValidatorContext ctx) {
 		if(studentHobby == null)
 			return false;
-		if(studentHobby.matches("Cricket|Football|Music"))
+		if(studentHobby.matches(listOfValidHobbies))
 			return true;
 		return false;
 	}

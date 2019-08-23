@@ -17,6 +17,9 @@ import java.lang.annotation.Documented;
 
 
 public @interface IsValidHobby {
+	
+	String listOfValidHobbies() default "cricket|football|music";
+	
 	String message() default "Please provide a valid hobby:"+
 				"accepted hobbies are: cricket, football, music";
 	Class<?>[] groups() default{};
