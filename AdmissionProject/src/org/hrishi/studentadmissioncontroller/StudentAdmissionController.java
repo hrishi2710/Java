@@ -20,7 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class StudentAdmissionController {
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
-		binder.setDisallowedFields(new String[] {"studentMobile"});
+		//binder.setDisallowedFields(new String[] {"studentMobile"});
 		//SimpleDateFormat dateFormat = new SimpleDateFormat("DD/MM/YYYY");
 		//binder.registerCustomEditor(Date.class,"studentDob", new CustomDateEditor(dateFormat, true));
 		binder.registerCustomEditor(String.class, "studentName", new StudentNameEditor());

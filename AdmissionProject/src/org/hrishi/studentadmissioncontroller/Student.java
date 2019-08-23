@@ -4,15 +4,22 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 
 public class Student {
+	
+	@Pattern(regexp="[^0-9]*")
 	private String studentName;
 	
-	@Size(min = 2, max= 30)
+	@Size(min = 2, max= 30) @IsValidHobby
 	private String studentHobby;
+	@Max(1000)
 	private Long studentMobile;
+	@Past
 	private Date studentDob;
 	private List<String> studentSkills;
 	private Address studentAddress;
