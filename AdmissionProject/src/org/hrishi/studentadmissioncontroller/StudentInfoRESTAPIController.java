@@ -2,6 +2,7 @@ package org.hrishi.studentadmissioncontroller;
 
 import java.util.ArrayList;
 
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class StudentInfoRESTAPIController {
-	@RequestMapping(value = "/students", method= RequestMethod.GET)
+	@RequestMapping(value = "/students", method= RequestMethod.GET, produces = MediaType.APPLICATION_XML_VALUE)
 	public ArrayList<Student> getStudentsList(){
 		
 		Student student1 = new Student();
